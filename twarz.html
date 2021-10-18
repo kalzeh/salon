@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Usługi kosmetyczne</title>
+    <link rel='stylesheet' href="style.css">
+</head>
+<body>
+    <div id="left">
+        <section id="left1">
+            <h2>W ofercie</h2>
+            <ul>
+                <li><a href="twarz.html">Zabiegi na twarz</a>
+                    <ol>
+                        <li>Piling</li>
+                        <li>Maska</li>
+                        <li>Regulacja brwi</li>
+                    </ol>
+                </li>
+                <li>Masaż</li>
+                <li>Diety oczyszczające</li>
+            </ul>
+            <a href="index.html">Do strony głównej</a>
+        </section>
+        <section id="left2">
+            <img src="obraz1.jpg" alt="Kosmetyczka">
+        </section>
+    </div>
+    <div id="right">
+        <section id="right1">
+            <h1>Salon kosmetyczny</h1>
+        </section>
+        <section id="right2">
+            <h3>Sprawdź cenę swojej wizyty</h3>
+            <form action="#">
+                <label for="piling"><input type="checkbox" name="cena" value="45" id="piling" value="">Piling</label><br>
+                <label for="maska"><input type="checkbox" name="cena" value="30" id="maska" >Maska</label><br>
+                <label for="masaz"><input type="checkbox" name="cena" value="20" id="masaz" >Masaż twarzy</label><br>
+                <label for="brwi"><input type="checkbox" name="cena" value="5" id="brwi" >Regulacja brwi</label><br>
+                <button >Sprawdź cenę</button>
+            </form>
+            <p id="wynik"></p>
+            <script>
+                const piling = document.getElementById("piling");
+                const maska= document.getElementById("maska");
+                const masaz = document.getElementById("masaz");
+                const brwi = document.getElementById("brwi");
+                const btn = document.querySelector("button");
+                
+                btn.addEventListener('click',function(e){
+                    e.preventDefault();
+                    let suma=0;
+                    if(piling.checked){suma+=parseInt(piling.value)}
+                    if(maska.checked){suma+=parseInt(maska.value)}
+                    if(masaz.checked){suma+=parseInt(masaz.value)}
+                    if(brwi.checked){suma+=parseInt(brwi.value)};
+                    document.getElementById("wynik").innerHTML="Cena zabiegów: "+suma;
+                });
+            </script>
+        </section>
+    </div>
+    <footer>
+        <p>Autor:0000000000000</p>
+    </footer>
+</body>
+</html>
